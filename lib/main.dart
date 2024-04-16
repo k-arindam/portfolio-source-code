@@ -1,11 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:karindam/firebase_options.dart';
 import 'package:karindam/src/common/constants.dart';
 import 'package:karindam/src/core/app_bindings.dart';
 import 'package:karindam/src/core/routes/app_routes.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(const KArindam());
 }
